@@ -1,24 +1,35 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##　Users テーブル
 
-Things you may want to cover:
+| Column             | Type   | Options                        |
+|--------------------|--------|--------------------------------|
+| nickname           | string | null: false                    |
+| email              | string | null: false, foreign_key: true |
+| encrypted_password | string | null: false                    |
 
-* Ruby version
+Association
+ has_many cocktail_histories
 
-* System dependencies
+## Cocktail_histories テーブル
 
-* Configuration
+| Column         | Type    | Options                        |
+|----------------|---------|--------------------------------|
+| user_id        | integer | null: false, foreign_key: true |
+| preferences_id | integer | null: false, foreign_key: true |
 
-* Database creation
+Association
+ belongs_to users
+ belongs_to preferences
 
-* Database initialization
+ ## Preferences テーブル
 
-* How to run the test suite
+| Column                | Type    | Options                        |
+|-----------------------|---------|--------------------------------|
+| base_alcohol          | string  | null: false                    |
+| taste                 | string  | null: false, foreign_key: true |
+| cocktail_recipe       | string  | null: false                    |
+| cocktail_histories_id | integer | null: false, foreign_key: true |
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Association
+ has_many cocktail_histories
