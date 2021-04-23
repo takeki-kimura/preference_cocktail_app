@@ -1,6 +1,6 @@
 # テーブル設計
 
-##　Users テーブル
+## Users テーブル
 
 | Column             | Type   | Options                        |
 |--------------------|--------|--------------------------------|
@@ -9,27 +9,30 @@
 | encrypted_password | string | null: false                    |
 
 Association
- has_many cocktail_histories
+ has_many :preferences
 
-## Cocktail_histories テーブル
+## Preferences テーブル
 
-| Column         | Type    | Options                        |
-|----------------|---------|--------------------------------|
-| user_id        | integer | null: false, foreign_key: true |
-| preferences_id | integer | null: false, foreign_key: true |
-
-Association
- belongs_to users
- belongs_to preferences
-
- ## Preferences テーブル
-
-| Column                | Type    | Options                        |
-|-----------------------|---------|--------------------------------|
-| base_alcohol          | string  | null: false                    |
-| taste                 | string  | null: false, foreign_key: true |
-| cocktail_recipe       | string  | null: false                    |
-| cocktail_histories_id | integer | null: false, foreign_key: true |
+| Column      | Type    | Options                        |
+|-------------|---------|--------------------------------|
+| user_id     | integer | null: false, foreign_key: true |
+| cocktail_id | integer | null: false, foreign_key: true |
 
 Association
- has_many cocktail_histories
+ belongs_to :users
+ belongs_to :cocktails
+
+ ## Cocktails テーブル
+
+| Column          | Type    | Options                        |
+|-----------------|---------|--------------------------------|
+| cocktail_name   | string  |                                |
+| glass_id        | integer |                                |
+| base_alcohol_id | integer |                                |
+| taste_id        | integer |                                |
+| degree_id       | integer |                                |
+| cocktail_recipe | text    |                                |
+| image           |         |                                |
+
+Association
+ has_many :preferences
