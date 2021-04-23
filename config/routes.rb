@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'preferences#index'
   get 'preferences/search'
 
+  resources :cocktails
   resources :users, only: :show
 end
