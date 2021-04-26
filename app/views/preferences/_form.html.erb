@@ -1,7 +1,7 @@
-<%= form_with model: モデル名, local: true do |f|%>
+<%= form_with model: @cocktail, local: true do |f|%>
   <div class="field">
-    <%= f.label :hoge, "プロトタイプの名称" %><br />
-    <%= f.text_field :hoge, id:"prototype_title" %>
+    <%= f.label :cocktail_name, "カクテル名" %><br />
+    <%= f.text_field :cocktail_name, id:"cocktail_title" %>
   </div>
 
   <div class="field">
@@ -15,8 +15,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "プロトタイプの画像" %><br />
-    <%= f.file_field :hoge, id:"prototype_image" %>
+    <%= f.label :image, "カクテルの画像" %><br />
+    <%= f.file_field :image, id:"cocktail_image" %>
   </div>
 
   <div class="actions">
