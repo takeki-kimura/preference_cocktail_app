@@ -37,7 +37,7 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: #f1f8fe;
+  background-color: #000000;
   margin-bottom: 48px;
   padding: 20px 0;
 
@@ -52,16 +52,17 @@ a {
   justify-content: space-between;
 }
 .logo {
-  width: 200px;
+  width: 150px;
+  text-align: center;
 }
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #ffffff;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #ffffff solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
@@ -74,7 +75,7 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #ffffff;
   text-decoration: none;
   user-select: none;
 }
@@ -120,6 +121,15 @@ a {
 
 /* メイン */
 
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.pakutaso.com/shared/img/thumb/IBUS458A2363_TP_V.jpg");
+  background-repeat: no-repeat;
+  background-position:50% 50%;
+}
+
 .greeting{
   margin-bottom: 20px;
 }
@@ -160,6 +170,8 @@ a {
   text-align: right;
   text-decoration: underline;
 }
+
+
 
 /* 詳細ページ */
 .prototype__wrapper{

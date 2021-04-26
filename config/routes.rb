@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'preferences#index'
-  get 'preferences/search'
+  root 'cocktails#index'
+  get 'cocktails/search'
 
   resources :cocktails
-  resources :users, only: :show
+  resources :users, only: [:show, :edit]
 end
