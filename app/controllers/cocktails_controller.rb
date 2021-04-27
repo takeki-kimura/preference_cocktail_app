@@ -1,7 +1,7 @@
 class CocktailsController < ApplicationController
-  before_action :search_cocktail, only: [:index, :search]
 
   def index
+    @cocktails = Cocktail.all
   end
 
   def new
@@ -15,16 +15,6 @@ class CocktailsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def search
-    @results = @p.result.includes(:cocktail)
-  end
-
-  private
-
-  def search_cocktail
-    @p = Cocktail.ransack(params[:q])
   end
 
   def cocktail_params
