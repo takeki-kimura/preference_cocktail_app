@@ -1,0 +1,10 @@
+<div class="card">
+  <%= link_to image_tag(cocktail.image, class: :card__img ), cocktail_path(cocktail.id) %>
+  <div class="card__body">
+    <%= link_to cocktail.cocktail_name, cocktail_path(cocktail.id), class: :card__title%>
+    <p class="card__summary">
+      <%= cocktail.cocktail_recipe %>
+    </p>
+    <%= link_to "by #{cocktail.user.nickname}", user_path(cocktail.user_id), class: :card__user %>
+  </div>
+</div>

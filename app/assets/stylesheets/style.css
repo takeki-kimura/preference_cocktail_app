@@ -37,10 +37,10 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: #f1f8fe;
+  background-color: #000000;
   margin-bottom: 48px;
   padding: 20px 0;
-
+  display: flex;
 }
 .inner {
   width: 1024px;
@@ -52,29 +52,31 @@ a {
   justify-content: space-between;
 }
 .logo {
-  width: 200px;
+  width: 250px;
+  text-align: center;
 }
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #ffffff;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #ffffff solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
 .nav__btn:hover{
   color: #fff;
-  background: #87CEFA;
+  background: #b30ee6;
+  align-items: center;
 }
 
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #ffffff;
   text-decoration: none;
   user-select: none;
 }
@@ -85,6 +87,7 @@ a {
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
+  color: #ffffff;
 }
 
 .form__text {
@@ -103,11 +106,11 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #fff;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   user-select: none;
-  background: #87CEFA;
-  border: 1px #87CEFA solid;
+  background: #c6c6da;
+  border: 1px #6196b8 solid;
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   transition: 0.2s ease;
@@ -120,11 +123,22 @@ a {
 
 /* メイン */
 
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.pakutaso.com/shared/img/thumb/IBUS458A2363_TP_V.jpg");
+  background-repeat: no-repeat;
+  background-position:50% 50%;
+}
+
 .greeting{
   margin-bottom: 20px;
+  color: #ffffff;
 }
 .greeting__link{
   text-decoration: underline;
+  color: #ffffff;
 }
 .page-heading {
   font-size: 30px;
@@ -133,13 +147,15 @@ a {
 .card__wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   min-height: calc(100vh - 161px);
 }
 .card {
   width: calc((100% - 50px) / 3);
   margin-bottom: 40px;
+  color: #ffffff;
+  background-color:#000000;
 }
 .card__img {
   margin-bottom: 16px;
@@ -149,6 +165,8 @@ a {
   font-size: 20px;
   margin-bottom: 8px;
   font-weight: bold;
+  color: #ffffff;
+
 }
 .card__summary {
   font-size: 16px;
@@ -156,10 +174,12 @@ a {
 .card__user {
   display: block;
   font-size: 12px;
-  color: #999;
+  color: rgb(202, 3, 136);
   text-align: right;
   text-decoration: underline;
 }
+
+
 
 /* 詳細ページ */
 .prototype__wrapper{

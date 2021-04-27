@@ -7,6 +7,7 @@ class CreateCocktails < ActiveRecord::Migration[6.0]
       t.integer    :taste_id
       t.integer    :degree_id
       t.text       :cocktail_recipe
+      t.references :user, foreign_key: true 
       t.timestamps
     end
   end
