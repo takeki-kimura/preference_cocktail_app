@@ -1,7 +1,7 @@
 class CocktailsController < ApplicationController
 
   def index
-    @cocktails = Cocktail.all
+    @cocktails = Cocktail.all.order("created_at DESC")
     @q = Cocktail.ransack(params[:q])
     @cocktail = @q.result(distinct: true)
   end
@@ -21,8 +21,8 @@ class CocktailsController < ApplicationController
 
   def show
     @cocktail = Cocktail.find(params[:id])
-    #@comment = Comment.new
-    #@comments = @prototype.comments.includes(:user)
+    @comment = Comment.new
+    @comments = @cocktail.comments.includes(:user)
   end
 
   def edit

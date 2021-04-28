@@ -1,7 +1,7 @@
 <%= form_with model: @cocktail, local: true do |f|%>
   <div class="field">
     <%= f.label :cocktail_name, "カクテル名" %><br />
-    <%= f.text_field :cocktail_name, id:"cocktail_title" %>
+    <%= f.text_field :cocktail_name, class: :form__nametext, id:"cocktail_title" %>
   </div>
 
   <div class="field">

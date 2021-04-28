@@ -6,11 +6,11 @@
         <%= link_to current_user.nickname + "さん", user_path(current_user.id), class: :greeting__link%>
       </div>
     <% end %>
-  <h1>カクテル検索</h1>
+    <h1>カクテル検索</h1>
     <div class="search-form">
       <%= search_form_for @q do |f| %>
   <!--  <div class="form-all">
-          <%#= f.label :name_cont, "なんでも検索" ,class: "col-form-label"%>
+          <%#= f.label :name_cont, "フリー検索" ,class: "col-form-label"%>
           <%#= f.search_field :cocktail_name_or_base_alcohol_or_taste_or_glass_or_degree , class: "form-control"%>
         </div> -->
         <div class="form-name">
