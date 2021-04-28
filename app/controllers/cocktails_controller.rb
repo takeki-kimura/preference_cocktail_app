@@ -2,6 +2,8 @@ class CocktailsController < ApplicationController
 
   def index
     @cocktails = Cocktail.all
+    @q = Cocktail.ransack(params[:q])
+    @cocktail = @q.result(distinct: true)
   end
 
   def new
@@ -14,6 +16,35 @@ class CocktailsController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+  end
+
+  def show
+    @cocktail = Cocktail.find(params[:id])
+    #@comment = Comment.new
+    #@comments = @prototype.comments.includes(:user)
+  end
+
+  def edit
+    @cocktail = Cocktail.find(params[:id])
+    unless @cocktail.user_id == current_user.id
+      redirect_to action: :index
+    end
+  end
+
+  def update
+    @cocktail = Cocktail.find(params[:id])
+    if @cocktail.update(cocktail_params)
+      redirect_to root_path
+    else
+      render :edit
+    end 
+  end
+
+  def destroy
+    @cocktail = Cocktail.find(params[:id])
+    if @cocktail.destroy
+      redirect_to root_path
     end
   end
 
