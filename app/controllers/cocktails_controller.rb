@@ -2,6 +2,8 @@ class CocktailsController < ApplicationController
 
   def index
     @cocktails = Cocktail.all
+    @q = Cocktail.ransack(params[:q])
+    @cocktail = @q.result(distinct: true)
   end
 
   def new
@@ -41,7 +43,7 @@ class CocktailsController < ApplicationController
 
   def destroy
     @cocktail = Cocktail.find(params[:id])
-    if cocktail.destroy
+    if @cocktail.destroy
       redirect_to root_path
     end
   end
