@@ -9,6 +9,7 @@ class Cocktail < ApplicationRecord
   belongs_to :degree
 
   has_many :preferences
+  has_many :comments, dependent: :destroy
   has_one_attached :image
 
   with_options presence: true do

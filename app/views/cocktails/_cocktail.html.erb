@@ -3,7 +3,7 @@
   <div class="card__body">
     <%= link_to cocktail.cocktail_name, cocktail_path(cocktail.id), class: :card__title%>
     <p class="card__summary">
-      <%= cocktail.cocktail_recipe %>
+      <%= safe_join(cocktail.cocktail_recipe.split("\n"),tag(:br)) %>
     </p>
     <%= link_to "by #{cocktail.user.nickname}", user_path(cocktail.user_id), class: :card__user %>
   </div>

@@ -4,6 +4,7 @@ class Glass < ActiveHash::Base
     { id: 1, name: 'ショート'},
     { id: 2, name: 'ロング'},
     { id: 3, name: 'ロックグラス'},
+    { id: 4, name: 'アイリッシュ・コーヒーグラス'},
   ]
 
   include ActiveHash::Associations

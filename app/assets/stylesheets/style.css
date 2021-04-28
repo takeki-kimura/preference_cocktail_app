@@ -18,6 +18,11 @@ div {
 body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
   color: #3b4043;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.pakutaso.com/shared/img/thumb/IBUS458A2363_TP_V.jpg");
+  background-position: auto;
+  background-attachment: fixed;
 }
 
 li {
@@ -45,6 +50,7 @@ a {
 .inner {
   width: 1024px;
   margin: 0 auto;
+  color: #ffffff;
 }
 .nav {
   width: 100%;
@@ -94,6 +100,10 @@ a {
   width: 50%;
 }
 
+.form__nametext {
+  width: 250px;
+}
+
 .field{
   margin: 10px 0;
 }
@@ -106,10 +116,10 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   user-select: none;
-  background: #c6c6da;
+  background: #000000;
   border: 1px #6196b8 solid;
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
@@ -122,15 +132,6 @@ a {
 }
 
 /* メイン */
-
-body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("https://www.pakutaso.com/shared/img/thumb/IBUS458A2363_TP_V.jpg");
-  background-repeat: no-repeat;
-  background-position:50% 50%;
-}
 
 .greeting{
   margin-bottom: 20px;
@@ -154,11 +155,14 @@ body {
 .card {
   width: calc((100% - 50px) / 3);
   margin-bottom: 40px;
+  margin-top: 30px;
   color: #ffffff;
   background-color:#000000;
+  height: 800px;
 }
 .card__img {
   margin-bottom: 16px;
+  height: auto;
 }
 .card__title {
   display: block;
@@ -173,6 +177,7 @@ body {
 }
 .card__user {
   display: block;
+  align-items: flex-end;
   font-size: 12px;
   color: rgb(231, 25, 25);
   text-align: right;
@@ -181,7 +186,7 @@ body {
 .search-form {
   display: flex;
   background-color: rgb(0, 0, 0);
-  width: 365px;
+  width: 300px;
   margin: 0 auto;
   color: #ffffff;
 }
@@ -209,7 +214,7 @@ body {
   text-decoration: underline;
 }
 .prototype__image{
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
   padding: 16px 0; 
 }
@@ -255,7 +260,7 @@ body {
 }
 
 .prototype__comments{
-  background-color: #f6f6f6;
+  background-color: #000000;
   padding: 20px;
   margin: 28px 0 40px 0;
 }
