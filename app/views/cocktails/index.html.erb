@@ -6,7 +6,7 @@
         <%= link_to current_user.nickname + "さん", user_path(current_user.id), class: :greeting__link%>
       </div>
     <% end %>
-    <h1>カクテル検索</h1>
+    <h1 class="search">カクテル検索</h1>
     <div class="search-form">
       <%= search_form_for @q do |f| %>
   <!--  <div class="form-all">
@@ -23,7 +23,7 @@
         </div>
         <div class="form-taste">
           <%= f.label :taste, "味" ,class: "col-form-label"%>
-          <%= f.collection_select(:taste_id, Taste.all, :id, :name, {}, {class:"select-box", id:"taste"}) %>
+          <%= f.collection_select(:taste_id, Taste.all, :id, :name, {}, {class:"taste-select-box", id:"taste"}) %>
         </div>
         <div class="form-glass-type">
           <%= f.label :glass, "グラスタイプ" ,class: "col-form-label"%>

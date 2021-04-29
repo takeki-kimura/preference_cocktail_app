@@ -183,16 +183,24 @@ a {
   text-align: right;
   text-decoration: underline;
 }
-.search-form {
+
+.search {
   display: flex;
+  justify-content: center;
+}
+.search-form {
   background-color: rgb(0, 0, 0);
-  width: 300px;
-  margin: 0 auto;
+  width: 330px;
+  height: 200px;
+  margin: auto;
   color: #ffffff;
+  margin-top: 30px;
+  padding-top: 15px;
 }
 
-.select-box {
-  justify-content: center;
+.taste-select-box {
+  text-align: center;
+  margin: 0 auto;
 }
 
 /* 詳細ページ */
