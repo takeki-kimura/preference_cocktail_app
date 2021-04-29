@@ -55,12 +55,12 @@ indexページ中央にある検索フォームでお好みによってカクテ
 
 ## カクテル投稿機能
 [![Image from Gyazo](https://i.gyazo.com/4b5e1305445484cab1c12053fb08d578.gif)](https://gyazo.com/4b5e1305445484cab1c12053fb08d578)
-このように投稿することができます。
+ このように投稿することができます。
 
 
 ## カクテル一覧表示機能
 [![Image from Gyazo](https://i.gyazo.com/91c65aac18908849c94432c302780b43.gif)](https://gyazo.com/91c65aac18908849c94432c302780b43)
-このようにカクテルは一覧表示されます。投稿が新しいものが上から順に表示されます。
+ このようにカクテルは一覧表示されます。投稿が新しいものが上から順に表示されます。
 
 
 ## カクテル検索機能
@@ -70,11 +70,11 @@ indexページ中央にある検索フォームでお好みによってカクテ
 
 ## カクテル詳細機能
 [![Image from Gyazo](https://i.gyazo.com/e81a4119e4b0cf4e8331e376d5c6bd27.gif)](https://gyazo.com/e81a4119e4b0cf4e8331e376d5c6bd27)
-このようにカクテル詳細表示されます。
+ このようにカクテル詳細表示されます。
 
 ## コメント機能
 [![Image from Gyazo](https://i.gyazo.com/78e509ecc58e29e2350bf29737402d83.gif)](https://gyazo.com/78e509ecc58e29e2350bf29737402d83)
-このようにコメントの投稿と削除ができます。
+ このようにコメントの投稿と削除ができます。
 
 
 ## マイページ
