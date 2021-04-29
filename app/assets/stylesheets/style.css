@@ -293,6 +293,12 @@ a {
   height: 300px;
 }
 
+.cocktail__status {
+  margin: 0 auto;
+  background-color: #000000;
+  width: 350px;
+}
+
 /* ユーザーページ */
 .user__wrapper{
   min-height: calc(100vh - 161px);
