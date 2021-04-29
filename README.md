@@ -24,8 +24,10 @@
 indexページ中央にある検索フォームでお好みによってカクテルの検索ができます。
 
 ## カクテル詳細機能
-カクテル詳細ページでは、カクテルや投稿者に対するコメントができます。投稿者はいつでもカクテルの編集や削除ができるようにしています。
+カクテル詳細ページでは、レシピや写真が見やすくなりカクテルや投稿者に対するコメントができます。投稿者はいつでもカクテルの編集や削除ができるようにしています。
 
+## コメント機能
+カクテルや投稿者に対してのコメントと削除ができるようになっています。
 
 # 目指した課題解決
 このアプリケーションは、昨今のお酒離れしている若者や、お酒初心者の方、色々なお酒を知りたい方に向けて「おすすめできる物は何か」、という暮らしをより豊かにできる機能を目指し作成しました。お酒に対するイメージがあまり良くないという方が増えている傾向があると思い、お酒の美味しさや楽しみ方を提供できるようなアプリケーションをこれからの追加実装によって実現しようと思っています。
@@ -52,32 +54,40 @@ indexページ中央にある検索フォームでお好みによってカクテ
 # 実装した機能について
 
 ## カクテル投稿機能
-# ![Image from Gyazo](https://i.gyazo.com/4b5e1305445484cab1c12053fb08d578.gif)
+![Image from Gyazo](https://i.gyazo.com/4b5e1305445484cab1c12053fb08d578.gif)
 このように投稿することができます。
 
 
 ## 記事一覧表示機能
-[![Image from Gyazo](https://i.gyazo.com/91c65aac18908849c94432c302780b43.gif)]
+![Image from Gyazo](https://i.gyazo.com/91c65aac18908849c94432c302780b43.gif)
 このようにカクテルは一覧表示されます。投稿が新しいものが上から順に表示されます。
 
 
 ## カクテル検索機能
  
-トップページ中央にある検索フォームを記入や選択すると、検索内容に近いカクテルが表示されます
+トップページ中央にある検索フォームを記入や選択すると、検索内容に近いカクテルが表示されます。
 
 
-## 記事詳細機能
-
+## カクテル詳細機能
+![Image from Gyazo](https://i.gyazo.com/e81a4119e4b0cf4e8331e376d5c6bd27.gif)
 このようにカクテル詳細表示されます。
+
+## コメント機能
+![Image from Gyazo](https://i.gyazo.com/78e509ecc58e29e2350bf29737402d83.gif)
+このようにコメントの投稿と削除ができます。
 
 
 ## マイページ
 
-投稿者名をクリックすると、マイページへ遷移することができます。自分が投稿した記事、ユーザーの検索履歴や、ユーザーの編集のリンクなどが存在します
+投稿者名をクリックすると、マイページへ遷移することができます。自分が投稿した記事、ユーザーの検索履歴や、ユーザーの編集のリンクなどが存在します。
 
+# 実装予定機能
 
+## 検索機能のアップデート
+質問形式にして回答によってお好みのカクテルが表示されるようにします。
 
-# ER図
+## 検索履歴表示
+過去に検索した履歴がマイページで表示できるようにします。
 
 
 # テーブル設計
@@ -91,30 +101,46 @@ indexページ中央にある検索フォームでお好みによってカクテ
 | encrypted_password | string | null: false                    |
 
 Association
+ has_many :cocktails
+ has_many :comments
  has_many :preferences
 
 ## Preferences テーブル
 
-| Column      | Type    | Options                        |
-|-------------|---------|--------------------------------|
-| user_id     | integer | null: false, foreign_key: true |
-| cocktail_id | integer | null: false, foreign_key: true |
+| Column      | Type       | Options                        |
+|-------------|------------|--------------------------------|
+| user_id     | references | null: false, foreign_key: true |
+| cocktail_id | integer    | null: false, foreign_key: true |
 
 Association
- belongs_to :users
- belongs_to :cocktails
+ belongs_to :user
+ belongs_to :cocktail
 
- ## Cocktails テーブル
+## Cocktails テーブル
 
-| Column          | Type    | Options                        |
-|-----------------|---------|--------------------------------|
-| cocktail_name   | string  |                                |
-| glass_id        | integer |                                |
-| base_alcohol_id | integer |                                |
-| taste_id        | integer |                                |
-| degree_id       | integer |                                |
-| cocktail_recipe | text    |                                |
-| image           |         |                                |
+| Column          | Type    | Options     |
+|-----------------|---------|-------------|
+| cocktail_name   | string  | null: false |
+| glass_id        | integer | null: false |
+| base_alcohol_id | integer | null: false |
+| taste_id        | integer | null: false |
+| degree_id       | integer | null: false |
+| cocktail_recipe | text    | null: false |
+| image           |         | null: false |
 
 Association
- has_many :preferences
+ belongs_to :user
+ has_many   :preferences
+ has_many   :comments
+
+## Comments テーブル
+
+| Column      | Type       | Options                         |
+|-------------|------------|---------------------------------|
+| cocktail_id | integer    | null: false                     |
+| user_id     | references | null: false , foreign_key: true |
+| text        | text       | null: false                     |
+
+Association
+ belongs_to :cocktail
+ belongs_to :user

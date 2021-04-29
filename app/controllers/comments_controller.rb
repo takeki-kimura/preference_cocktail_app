@@ -10,6 +10,14 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @cocktail = Cocktail.find(params[:cocktail_id])
+    @comment = @cocktail.comments.find(params[:id])
+    if @comment.destroy
+      redirect_to cocktail_path(@cocktail)
+    end
+  end
+
   private
   def comment_params
     params.require(:comment).permit(:text).merge(user_id: current_user.id, cocktail_id: params[:cocktail_id])

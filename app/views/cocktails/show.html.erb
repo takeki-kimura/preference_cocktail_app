@@ -34,12 +34,13 @@
           <% end %> 
         <% end %>
         <ul class="comments_lists">
-          <%# @comments.each do |comment| %>
+          <% @comments.each do |comment| %>
             <li class="comments_list">
-              <%= @comment.text %>
-              <%#= link_to "(#{@comment.current_user.nickname})", user_path(id:current_user), class: :comment_user %>
+              <%= comment.text %>
+              <%= link_to "(#{comment.user.nickname})", user_path(comment.user_id), class: :comment_user %>
+              <%= link_to '削除', cocktail_comment_path(@cocktail,comment), method: :delete ,data: {confirm:'削除してもよろしいですか？'}%>
             </li>
-          <%# end %>
+          <% end %>
         </ul>
       </div>
     </div>
