@@ -39,12 +39,12 @@ ActiveRecord::Schema.define(version: 2021_04_28_024641) do
   end
 
   create_table "cocktails", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "cocktail_name"
-    t.integer "glass_id"
-    t.integer "base_alcohol_id"
-    t.integer "taste_id"
-    t.integer "degree_id"
-    t.text "cocktail_recipe"
+    t.string "cocktail_name", null: false
+    t.integer "glass_id", null: false
+    t.integer "base_alcohol_id", null: false
+    t.integer "taste_id", null: false
+    t.integer "degree_id", null: false
+    t.text "cocktail_recipe", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -66,13 +66,6 @@ ActiveRecord::Schema.define(version: 2021_04_28_024641) do
   end
 
   create_table "glasses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "preferences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "cocktail_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

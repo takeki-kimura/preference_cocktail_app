@@ -3,7 +3,7 @@ class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all.order("created_at DESC")
     @q = Cocktail.ransack(params[:q])
-    @cocktail = @q.result(distinct: true)
+    @cocktails = @q.result(distinct: true)
   end
 
   def new
