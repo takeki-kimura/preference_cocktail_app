@@ -18,18 +18,18 @@
           <%= f.search_field :cocktail_name , class: "form-control"%>
         </div>
         <div class="form-base-alcohol">
-          <%= f.label :base_alcohol, "ベースのお酒" ,class: "col-form-label"%>
+          <%= f.label :base_alcohol, "ベース" ,class: "col-form-label"%>
           <%= f.collection_select(:base_alcohol_id, BaseAlcohol.all, :id, :name, {}, {class:"select-box", id:"base_alcohol"}) %>
         </div>
         <div class="form-taste">
           <%= f.label :taste, "味" ,class: "col-form-label"%>
           <%= f.collection_select(:taste_id, Taste.all, :id, :name, {}, {class:"taste-select-box", id:"taste"}) %>
         </div>
-        <div class="form-glass-type">
-          <%= f.label :glass, "グラスタイプ" ,class: "col-form-label"%>
+        <div class="form-glass">
+          <%= f.label :glass, "グラス" ,class: "col-form-label"%>
           <%= f.collection_select(:glass_id, Glass.all, :id, :name, {}, {class:"select-box", id:"glass"}) %>
         </div>
-        <div class="form-alcohol-percentage">
+        <div class="form-degree">
           <%= f.label :degree, "度数" ,class: "col-form-label"%>
           <%= f.collection_select(:degree_id, Degree.all, :id, :name, {}, {class:"select-box", id:"degree"}) %>
         </div>
